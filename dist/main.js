@@ -90,27 +90,152 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _Coffee__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
-/* harmony import */ var _Water__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
-/* harmony import */ var _Milk__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
-/* harmony import */ var _CoffeeMachine__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4);
+/* harmony import */ var _CoffeeMachine__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
+/* harmony import */ var _Coffee__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
+/* harmony import */ var _Water__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
+/* harmony import */ var _Milk__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4);
 
 
 
 
-var coffeeMachine = new _CoffeeMachine__WEBPACK_IMPORTED_MODULE_3__["CoffeeMachine"](new _Coffee__WEBPACK_IMPORTED_MODULE_0__["Coffee"](1000), new _Water__WEBPACK_IMPORTED_MODULE_1__["Water"](5000), new _Milk__WEBPACK_IMPORTED_MODULE_2__["Milk"](2000));
-coffeeMachine.getEspresso();
-coffeeMachine.getAmericano();
-coffeeMachine.getLatte();
-coffeeMachine.extraCoffee();
-coffeeMachine.extraWater();
-coffeeMachine.extraMilk();
-coffeeMachine.water.amount = 2000;
-console.log(coffeeMachine); // let espresso = document.getElementById('espresso');
-// espresso.addEventListener( 'click', coffeeMachine.getEspresso);
+var coffeeMachine = new _CoffeeMachine__WEBPACK_IMPORTED_MODULE_0__["CoffeeMachine"](new _Coffee__WEBPACK_IMPORTED_MODULE_1__["Coffee"](1000), new _Water__WEBPACK_IMPORTED_MODULE_2__["Water"](5000), new _Milk__WEBPACK_IMPORTED_MODULE_3__["Milk"](2000));
+var espresso = document.getElementById('espresso');
+var americano = document.getElementById('americano');
+var latte = document.getElementById('latte');
+var extraCoffee = document.getElementById('extraCoffee');
+var extraWater = document.getElementById('extraWater');
+var extraMilk = document.getElementById('extraMilk');
+espresso.addEventListener('click', function () {
+  setTimeout(function () {
+    return coffeeMachine.getEspresso();
+  }, 2000);
+});
+americano.addEventListener('click', function () {
+  setTimeout(function () {
+    return coffeeMachine.getAmericano();
+  }, 2000);
+});
+latte.addEventListener('click', function () {
+  setTimeout(function () {
+    return coffeeMachine.getLatte();
+  }, 2000);
+});
+extraCoffee.addEventListener('click', function () {
+  setTimeout(function () {
+    return coffeeMachine.extraCoffee();
+  }, 1000);
+});
+extraWater.addEventListener('click', function () {
+  setTimeout(function () {
+    return coffeeMachine.extraWater();
+  }, 1000);
+});
+extraMilk.addEventListener('click', function () {
+  setTimeout(function () {
+    return coffeeMachine.extraMilk();
+  }, 1000);
+}); // console.log(coffeeMachine);
+// coffeeMachine.getEspresso();
+// coffeeMachine.getAmericano();
+// coffeeMachine.getLatte();
+// coffeeMachine.extraCoffee();
+// coffeeMachine.extraWater();
+// coffeeMachine.extraMilk();
+// coffeeMachine.water.amount += 1000;
 
 /***/ }),
 /* 1 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CoffeeMachine", function() { return CoffeeMachine; });
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var CoffeeMachine = /*#__PURE__*/function () {
+  function CoffeeMachine(coffee, water, milk) {
+    _classCallCheck(this, CoffeeMachine);
+
+    this.coffee = coffee;
+    this.water = water;
+    this.milk = milk;
+  }
+
+  _createClass(CoffeeMachine, [{
+    key: "getEspresso",
+    value: function getEspresso() {
+      if (this.coffee.amount > 10 && this.water.amount > 50) {
+        this.coffee.amount -= 10;
+        this.water.amount -= 50;
+        return alert('Espresso done!');
+      } else {
+        alert('Not enough ingredients!!!');
+      }
+    }
+  }, {
+    key: "getAmericano",
+    value: function getAmericano() {
+      if (this.coffee.amount > 10 && this.water.amount > 100) {
+        this.coffee.amount -= 10;
+        this.water.amount -= 100;
+        return alert('Americano done!');
+      } else {
+        alert('Not enough ingredients!!!');
+      }
+    }
+  }, {
+    key: "getLatte",
+    value: function getLatte() {
+      if (this.coffee.amount > 10 && this.water.amount > 100 && this.milk.amount > 150) {
+        this.coffee.amount -= 10;
+        this.water.amount -= 50;
+        this.milk.amount -= 150;
+        return alert('Latte done!');
+      } else {
+        alert('Not enough ingredients!!!');
+      }
+    }
+  }, {
+    key: "extraCoffee",
+    value: function extraCoffee() {
+      if (this.coffee.amount > 10) {
+        this.coffee.amount -= 10;
+        return alert('extra coffee');
+      } else {
+        alert('Not enough coffee!!!');
+      }
+    }
+  }, {
+    key: "extraWater",
+    value: function extraWater() {
+      if (this.water.amount > 50) {
+        this.water.amount -= 50;
+        return alert('extra water');
+      } else {
+        alert('Not enough water!!!');
+      }
+    }
+  }, {
+    key: "extraMilk",
+    value: function extraMilk() {
+      if (this.milk.amount > 100) {
+        this.milk.amount -= 100;
+        return alert('extra milk');
+      } else {
+        alert('Not enough milk!!!');
+      }
+    }
+  }]);
+
+  return CoffeeMachine;
+}();
+
+/***/ }),
+/* 2 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -143,7 +268,7 @@ var Coffee = /*#__PURE__*/function () {
 }();
 
 /***/ }),
-/* 2 */
+/* 3 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -176,7 +301,7 @@ var Water = /*#__PURE__*/function () {
 }();
 
 /***/ }),
-/* 3 */
+/* 4 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -206,97 +331,6 @@ var Milk = /*#__PURE__*/function () {
   }]);
 
   return Milk;
-}();
-
-/***/ }),
-/* 4 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CoffeeMachine", function() { return CoffeeMachine; });
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-var CoffeeMachine = /*#__PURE__*/function () {
-  function CoffeeMachine(coffee, water, milk) {
-    _classCallCheck(this, CoffeeMachine);
-
-    this.coffee = coffee;
-    this.water = water;
-    this.milk = milk;
-  }
-
-  _createClass(CoffeeMachine, [{
-    key: "getEspresso",
-    value: function getEspresso() {
-      if (this.coffee.amount > 10 && this.water.amount > 50) {
-        this.coffee.amount -= 10;
-        this.water.amount -= 50;
-        return console.log('Espresso done!');
-      } else {
-        console.log('Not enough ingredients!!!');
-      }
-    }
-  }, {
-    key: "getAmericano",
-    value: function getAmericano() {
-      if (this.coffee.amount > 10 && this.water.amount > 100) {
-        this.coffee.amount -= 10;
-        this.water.amount -= 100;
-        return console.log('Americano done!');
-      } else {
-        console.log('Not enough ingredients!!!');
-      }
-    }
-  }, {
-    key: "getLatte",
-    value: function getLatte() {
-      if (this.coffee.amount > 10 && this.water.amount > 100 && this.milk.amount > 150) {
-        this.coffee.amount -= 10;
-        this.water.amount -= 50;
-        this.milk.amount -= 150;
-        return console.log('Latte done!');
-      } else {
-        console.log('Not enough ingredients!!!');
-      }
-    }
-  }, {
-    key: "extraCoffee",
-    value: function extraCoffee() {
-      if (this.coffee.amount > 10) {
-        this.coffee.amount -= 10;
-        return console.log('extra coffee');
-      } else {
-        console.log('Not enough coffee!!!');
-      }
-    }
-  }, {
-    key: "extraWater",
-    value: function extraWater() {
-      if (this.water.amount > 50) {
-        this.water.amount -= 50;
-        return console.log('extra water');
-      } else {
-        console.log('Not enough water!!!');
-      }
-    }
-  }, {
-    key: "extraMilk",
-    value: function extraMilk() {
-      if (this.milk.amount > 100) {
-        this.milk.amount -= 100;
-        return console.log('extra milk');
-      } else {
-        console.log('Not enough milk!!!');
-      }
-    }
-  }]);
-
-  return CoffeeMachine;
 }();
 
 /***/ })
