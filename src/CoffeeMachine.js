@@ -9,9 +9,9 @@ export class CoffeeMachine {
         if (this.coffee.amount > 10 && this.water.amount > 50) {
             this.coffee.amount -= 10;
             this.water.amount  -= 50;
-            return console.log('Espresso done!'); 
+            return alert('Espresso done!'); 
         } else {
-            console.log('Not enough ingredients!!!');
+            alert('Not enough ingredients!!!');
         }
     }
 
@@ -19,9 +19,9 @@ export class CoffeeMachine {
         if (this.coffee.amount > 10 && this.water.amount > 100) {
             this.coffee.amount -= 10;
             this.water.amount  -= 100;
-            return console.log('Americano done!');
+            return alert('Americano done!');
         } else {
-            console.log('Not enough ingredients!!!');
+            alert('Not enough ingredients!!!');
         }
     }
 
@@ -30,36 +30,36 @@ export class CoffeeMachine {
             this.coffee.amount -= 10;
             this.water.amount  -= 50;
             this.milk.amount   -= 150;
-            return console.log('Latte done!');
+            return alert('Latte done!');
         } else {
-            console.log('Not enough ingredients!!!');
+            alert('Not enough ingredients!!!');
         }        
     }
 
     extraCoffee() {
         if (this.coffee.amount > 10) {
             this.coffee.amount -= 10;
-            return console.log('extra coffee');
+            return alert('extra coffee');
         } else {
-            console.log('Not enough coffee!!!');
+            alert('Not enough coffee!!!');
         }
     }
 
     extraWater() {
         if (this.water.amount > 50) {
             this.water.amount -= 50;
-            return console.log('extra water');
+            return alert('extra water');
         } else {
-            console.log('Not enough water!!!');
+            alert('Not enough water!!!');
         }
     }
 
     extraMilk() {
         if (this.milk.amount > 100) {
             this.milk.amount -= 100;
-            return console.log('extra milk');
+            return alert('extra milk');
         } else {
-            console.log('Not enough milk!!!');
+            alert('Not enough milk!!!');
         }
     }
 }
